@@ -1513,6 +1513,7 @@
     .Procedures>p {
         line-height: 41px !important;
         padding-right: 10px;
+        font-size: 14px;
     }
     /*-------------- End boxs -----------------*/
     /*-------------- Start checkbox image --------------*/
@@ -1939,8 +1940,8 @@
     }
     
     .Staff .Staff-inside {
-        min-height: 422px;
-        max-height: 422px;
+        min-height: 484px;
+        max-height: 484px;
         overflow: auto;
         outline: 0 !important;
     }
@@ -2378,6 +2379,10 @@
         -o-border-radius: 5px;
         border: 1px solid rgba(0, 0, 0, 0.12);
         background-color: rgba(98, 2, 238, 0);
+    }
+    
+    .select-header .dropdown-toggle .filter-option-inner-inner {
+        margin-top: 5px;
     }
     /*-------------- End be files single view -----------------*/
     /*-------------- Start responsive --------------*/
