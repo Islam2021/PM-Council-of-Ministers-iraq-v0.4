@@ -1,16 +1,26 @@
-$(document).ready(function () {
+$(document).ready(function() {
     if ($(".inputMaterial").val() != "") {
         $(".inputMaterial").addClass("valid");
     } else {
         $(".inputMaterial").removeClass("valid");
     }
-    $(".inputMaterial").blur(function () {
-        if($(this).val() !="") {
+    $(".inputMaterial").blur(function() {
+        if ($(this).val() != "") {
             $(this).addClass("valid");
         } else {
             $(this).removeClass("valid");
         }
     })
+
+
+    // start progress bar
+    $('.progress .progress-bar').each(function() {
+        $(this).animate({ width: $(this).attr('aria-valuenow') }, 50);
+        if ($(this).attr('aria-valuenow') == '0%') {
+            $(".progress .progress-bar span").css("left", "-32px")
+        }
+    });
+
     /*----------- Start datepicker -----------*/
 
     $('#MyDate').datepicker({
@@ -23,33 +33,33 @@ $(document).ready(function () {
     /*-------------- End progress bar content --------------*/
     /*----------- Start tiny toggle -----------*/
     $(".tiny-toggle").tinyToggle({
-        onCheck: function () { $("input[name=thing]").attr('checked', "checked"); },
-        onUncheck: function () { $("input[name=thing]").removeAttr("checked") },
+        onCheck: function() { $("input[name=thing]").attr('checked', "checked"); },
+        onUncheck: function() { $("input[name=thing]").removeAttr("checked") },
 
     });
 
-/*----------- End tiny toggle -----------*/
-        function CheckFieldIsEmpty(element) {
-        if($(element).val() != "") {
+    /*----------- End tiny toggle -----------*/
+    function CheckFieldIsEmpty(element) {
+        if ($(element).val() != "") {
             $("#delete-text-before-field").removeClass("d-none");
         } else {
             $("#delete-text-before-field").addClass("d-none");
         }
     }
-    $(".field-Username-page-user-add").keyup(function () {
+    $(".field-Username-page-user-add").keyup(function() {
         CheckFieldIsEmpty($(this))
     })
-    $("#delete-text-before-field").click(function ()  {
-        
+    $("#delete-text-before-field").click(function() {
+
         $(this).prevAll("input").val("");
-        if($(".field-Username-page-user-add").val() != "") {
+        if ($(".field-Username-page-user-add").val() != "") {
             $("#delete-text-before-field").removeClass("d-none");
         } else {
             $("#delete-text-before-field").addClass("d-none");
         }
     })
-    $(".field-password-page-add-user").keyup(function () {
-        if($(".field-password-page-add-user").attr("type") == "password") {
+    $(".field-password-page-add-user").keyup(function() {
+        if ($(".field-password-page-add-user").attr("type") == "password") {
             $("#icon-show-password").removeClass("d-none");
             $("#icon-hide-password").addClass("d-none");
         } else {
@@ -58,19 +68,19 @@ $(document).ready(function () {
             $("#icon-hide-password").removeClass("d-none");
         }
     });
-    $("#icon-show-password").click(function () {
+    $("#icon-show-password").click(function() {
         $(".field-password-page-add-user").attr("type", "text");
         $(this).addClass("d-none");
         $("#icon-hide-password").removeClass("d-none");
     });
-    $("#icon-hide-password").click(function () {
+    $("#icon-hide-password").click(function() {
         $(".field-password-page-add-user").attr("type", "password");
         $(this).addClass("d-none");
         $("#icon-show-password").removeClass("d-none");
     });
     /*----------- Start UploadFile ----------------*/
-    
-    $('.custom-file-input').on('change',function(event){
+
+    $('.custom-file-input').on('change', function(event) {
         var files = event.target.files;
         console.log(files);
         for (var i = 0; i < files.length; i++) {
@@ -80,11 +90,11 @@ $(document).ready(function () {
         }
     });
 
-    $(".custom-file").click(function () {
-        $(".custom-file-input").click();
-    })
-    /*----------- End UploadFile ----------------*/
-    /*----------- Start Datatable ----------------*/
+    $(".custom-file").click(function() {
+            $(".custom-file-input").click();
+        })
+        /*----------- End UploadFile ----------------*/
+        /*----------- Start Datatable ----------------*/
     if ($(window).width() >= 1365) {
         datatableX('#requestTable', false);
         datatableX('#requestTable2', false);
@@ -94,17 +104,16 @@ $(document).ready(function () {
         datatableX('#requestTable2', true);
         datatableX('#requestTable3', true);
     }
-    $(window).resize(function () {
-        if ($(window).width() >= 768) {
-        } else if ($(window).width() <= 768) {
-        }
+    $(window).resize(function() {
+        if ($(window).width() >= 768) {} else if ($(window).width() <= 768) {}
     });
-    $(window).scroll(function () {
+    $(window).scroll(function() {
         $(".fixedHeader-floating").css("top", $(".navbar").innerHeight());
     })
+
     function datatableX(tableName, responsiveX) {
         var table = $(tableName).DataTable({
-           "ordering": false,
+            "ordering": false,
             fixedHeader: true,
             responsive: responsiveX,
             "autoWidth": true,
@@ -136,29 +145,29 @@ $(document).ready(function () {
 
 
         // table filter 
-        $('.field-search-user-name').on('keyup', function () {
+        $('.field-search-user-name').on('keyup', function() {
             table.columns(1).search(this.value).draw();
         });
-        $('.field-search-email').on('keyup', function () {
+        $('.field-search-email').on('keyup', function() {
             table.columns(2).search(this.value).draw();
         });
         //$('.field-search-job-title').on('keyup', function () {
         //    table.columns(7).search(this.value).draw();
         //});
-        $('.select-search-User-role').on('change', function () {
+        $('.select-search-User-role').on('change', function() {
             table.columns(6).search(this.value).draw();
         });
-        $(".select-search-user-status").on('change', function () {
+        $(".select-search-user-status").on('change', function() {
             table.columns(10).search(this.value).draw();
         });
-        $(".select-search-Facilities").on('change', function () {
+        $(".select-search-Facilities").on('change', function() {
             table.columns(8).search(this.value).draw();
         });
-        $(".select-search-Projects").on('change', function () {
+        $(".select-search-Projects").on('change', function() {
             table.columns(9).search(this.value).draw();
         });
 
-        $(".select-search-Projects").on('change', function () {
+        $(".select-search-Projects").on('change', function() {
             table.columns(9).search(this.value).draw();
         });
 
@@ -173,12 +182,12 @@ $(document).ready(function () {
                 table.columns(11).search(fd).draw();
             }
         });
-    /*----------- End datepicker -----------*/
+        /*----------- End datepicker -----------*/
     }
 
 
 
-    $('#field-search-memo-index2').keyup(function () {
+    $('#field-search-memo-index2').keyup(function() {
         table.search($(this).val()).draw();
 
     });
@@ -205,7 +214,7 @@ $(document).ready(function () {
         document.getElementById("myForm").reset();
     };
 
-    $('#Reset').on('click', function (e) {
+    $('#Reset').on('click', function(e) {
 
         location.reload();
 
@@ -214,9 +223,9 @@ $(document).ready(function () {
 
 
 });
-$(window).on("load", function () {
-        // start progress bar
-        $('.progress .progress-bar').each(function() {
-            $(this).animate({ width: $(this).attr('aria-valuenow') + "%"  }, 50);
-        });
+$(window).on("load", function() {
+    // start progress bar
+    $('.progress .progress-bar').each(function() {
+        $(this).animate({ width: $(this).attr('aria-valuenow') + "%" }, 50);
+    });
 });

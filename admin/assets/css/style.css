@@ -2503,6 +2503,36 @@
     /*-------------- Start responsive --------------*/
     /* extra code css */
     
+    .no-border {
+        border: 0 !important;
+    }
+    
+    .no-bg {
+        background: none !important;
+    }
+    
+    .center {
+        position: relative;
+        vertical-align: text-top;
+        margin-left: 5px;
+    }
+    
+    .pointer {
+        cursor: pointer;
+    }
+    
+    .color-blue {
+        color: rgba(37, 87, 167, 1) !important;
+    }
+    
+    .small-size {
+        font-size: 12px !important;
+    }
+    
+    .height-41 {
+        height: 41px;
+    }
+    
     .bootstrap-select .dropdown-toggle .filter-option-inner-inner {
         overflow: hidden;
         font-size: 13px;
@@ -2519,4 +2549,156 @@
     input:-moz-placeholder {
         font-size: 13px !important;
         font-weight: 600;
+    }
+    
+    .right-block {
+        text-align: right;
+    }
+    
+    .collapse_wrapper {
+        padding: 8px 15px 10px 15px !important;
+    }
+    
+    .snj-panel .panel-heading {
+        background: none;
+        border: none;
+        border-radius: 0;
+        position: relative;
+        padding: 15px 0 25px 0;
+    }
+    
+    .panel-heading .add_circle {
+        color: rgba(37, 87, 167, 1);
+    }
+    
+    .progress_pos {
+        bottom: 0 !important;
+        margin: 0;
+    }
+    
+    .progress {
+        overflow: visible;
+        margin-bottom: 0;
+        height: 4px;
+        position: relative;
+        bottom: 25px;
+        border-radius: 15px;
+        width: 100% !important;
+    }
+    
+    .progress .progress-bar {
+        background-color: #5c4084;
+        position: relative;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+    }
+    
+    .progress .progress-bar span {
+        background-color: rgba(1, 84, 149, 1);
+        position: absolute;
+        bottom: -7px;
+        font-size: 12px;
+        line-height: 10px;
+        padding: 5px 8px 5px 8px;
+        display: inline-block;
+        left: 0;
+        border-radius: 13px;
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+        z-index: 9;
+    }
+    /* .form-check-input {
+        display: block !important;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 90%;
+        top: 6px;
+    } */
+    
+    .form-check {
+        position: relative;
+        text-align: center;
+        top: 10px;
+        padding-left: 0 !important;
+    }
+    
+    .form-1 {
+        margin-bottom: 0;
+    }
+    
+    .form-2 {
+        margin-top: 25px;
+    }
+    
+    .checkbox-align {
+        margin-right: 28px;
+    }
+    
+    input[type=checkbox] {
+        display: none;
+    }
+    
+    input[type=checkbox]+label:before {
+        content: "\2714";
+        border: 0.1em solid rgba(0, 0, 0, 0.54);
+        border-radius: 0.2em;
+        display: inline-block;
+        width: 1.1em;
+        height: 1.1em;
+        padding-left: 0;
+        padding-bottom: 0;
+        margin-left: 0.2em;
+        vertical-align: middle;
+        color: transparent;
+        transition: .2s;
+        line-height: 18px;
+    }
+    
+    input[type=checkbox]+label:active:before {
+        transform: scale(0);
+    }
+    
+    input[type=checkbox]:checked+label:before {
+        background-color: rgba(37, 87, 167, 1);
+        border-color: rgba(37, 87, 167, 1);
+        color: #fff;
+    }
+    
+    input[type=checkbox]:disabled+label:before {
+        transform: scale(1);
+        border-color: #aaa;
+    }
+    
+    input[type=checkbox]:checked:disabled+label:before {
+        transform: scale(1);
+        background-color: #bfb;
+        border-color: #bfb;
+    }
+    
+    .checkbox-text {
+        position: relative;
+        top: 1px;
+        font-style: normal;
+        font-size: 14px;
+        color: rgba(56, 56, 56, 1);
+        text-align: right;
+        line-height: 24px;
+        display: inline-block;
+        width: 200px;
+    }
+    
+    .checkbox-align .number {
+        margin-right: 50px;
+        font-size: 10px;
+        color: rgba(56, 56, 56, 1);
+        text-align: center;
+        line-height: 18px;
+        background: rgba(229, 229, 229, 1);
+        border-radius: 25px;
+        width: 30px;
+        display: inline-block;
+        height: 18px;
     }
