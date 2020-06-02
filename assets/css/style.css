@@ -305,23 +305,22 @@ button:focus {
 }
 
 .bg-wrapper {
-    background: url(../img/bg-front.png) no-repeat center / cover;
-    width: 100%;
-    height: 100vh;
-}
-
-.watermark {
     position: absolute;
     content: "";
     top: 0;
     left: 0;
     height: 100vh;
     width: 100%;
-    background: -webkit-radial-gradient(circle, rgba(230, 244, 255, 1) 0%, rgba(152, 208, 252, 1) 100%);
-    background: -moz-radial-gradient(circle, rgba(230, 244, 255, 1) 0%, rgba(152, 208, 252, 1) 100%);
-    background: -o-radial-gradient(circle, rgba(230, 244, 255, 1) 0%, rgba(152, 208, 252, 1) 100%);
-    background: radial-gradient(circle, rgba(230, 244, 255, 1) 100%, rgba(152, 208, 252, 1) 0%);
-    mix-blend-mode: screen;
+    background: #0C0B3E;
+}
+
+.watermark {
+    background: url(../img/Logos/Asset3.svg) no-repeat center;
+    background-size: cover;
+    width: 318px;
+    height: 449px;
+    display: block;
+    margin: 12% auto;
 }
 
 footer {
@@ -379,6 +378,26 @@ footer {
     position: relative;
 }
 
+.inputMaterial_login {
+    font-size: 18px;
+    display: block;
+    padding-right: 15px;
+    text-align: right;
+    border-radius: 4px !important;
+    -webkit-border-radius: 4px !important;
+    -moz-border-radius: 4px !important;
+    -ms-border-radius: 4px !important;
+    -o-border-radius: 4px !important;
+    margin-bottom: 0 !important;
+    border: 1px solid rgba(25, 25, 25, 0.32);
+    width: 100%;
+    height: 36px;
+}
+
+.inputMaterial_login:focus {
+    border: 2px solid rgba(1, 84, 149, 1) !important;
+}
+
 .inputMaterial {
     font-size: 18px;
     display: block;
@@ -430,6 +449,12 @@ footer {
     color: rgba(0, 0, 0, 0.87);
     line-height: 20px;
     font-weight: 600;
+}
+
+.label {
+    top: -9px;
+    background: #fff;
+    padding: 0 5px;
 }
 
 .select_lable {
@@ -541,7 +566,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
     position: absolute;
     content: "";
     left: 20px;
-    top: 5px;
+    top: 4px;
     font-family: 'material';
 }
 
@@ -549,7 +574,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
     position: absolute;
     content: "";
     left: 20px;
-    top: 5px;
+    top: 3px;
     font-family: 'material';
 }
 
@@ -573,6 +598,10 @@ textarea.materialize-textarea:focus:not([readonly]) {
     font-weight: bold;
 }
 
+.button-login {
+    color: white;
+}
+
 .forgetPass {
     font-size: 16px;
     color: rgba(0, 0, 0, 1);
@@ -590,12 +619,33 @@ textarea.materialize-textarea:focus:not([readonly]) {
 }
 
 .content_data {
-    position: relative;
+    position: absolute;
     z-index: 1;
-    text-align: right;
-    padding: 60px 30px;
-    height: 100%;
-    overflow: auto
+    text-align: center;
+    padding: 60px 0;
+    top: 0;
+    display: block;
+    width: 100%;
+}
+
+.logos-text {
+    margin-top: 20%;
+}
+
+.logos-text h1 {
+    color: #F1C840;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 30px !important;
+}
+
+.logos-text p {
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 400;
+    width: 90%;
+    margin: 0 auto;
+    line-height: 30px;
 }
 
 .content_title {
